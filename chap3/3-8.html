@@ -7,13 +7,30 @@
   <title>Document</title>
 </head>
 <body>
+  <div id="output"></div>
   <script>
     const machine = 8000;
     const total = (price) =>{
       const tax = 0.1;
       return price + price*tax
     }
-    console.log(`コーヒーメーカーの値段は${total(machine)}円(税込み)です。`)
+    const price = `コーヒーメーカーの値段は${total(machine)}円(税込み)です。`
+    document.getElementById('output').textContent = price
+    
+    
+    const drinks = {
+      cafee: 300,
+      orange: 100,
+      protain: 500,
+    }
+    let drinksPrice = {}
+    const drinksArr = Object.entries(drinks)
+    for(i = 0; i<drinksArr.length; i++){
+      const drinkKey = drinksArr[i][0]
+      const drinkVal = total(drinksArr[i][1])
+      drinksPrice[drinkKey] = drinkVal
+    }
+    console.log(drinksPrice)
   </script>
 </body>
 </html>
