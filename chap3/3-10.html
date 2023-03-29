@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="output"></div>
+  <script>
+    const machine = 8000;
+    const total = (price) =>{
+      const tax = 0.1;
+      return price + price*tax
+    }
+    let todoarr = ['デザインカンプ作成','データ整理', '勉強会申し込み', '牛乳買う']
+    let todos = todoarr.join('\n')
+    document.getElementById('output').innerText = todos
+  </script>
+</body>
+</html>
